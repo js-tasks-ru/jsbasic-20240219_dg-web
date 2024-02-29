@@ -1,11 +1,10 @@
 function namify(users) {
-  let res = []
   if(users) {
-    users.forEach(user => {
+    users.forEach((user, i) => {
       for(key in user) {
-        (key == 'name') ? res.push(user[key]) : null
+        (key == 'name') ? users.splice(i, 1, user[key]) : null
       }
     })
-    return res
+    return users
   }
 }
