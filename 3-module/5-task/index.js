@@ -5,8 +5,6 @@ function getMinMax(str) {
     (!isNaN(el)) ? toCompare.push(el) : null
   });
 
-  console.log('to compare = ' + toCompare)
-
   let max = toCompare.reduce((max, current) => {
     return (Number(current) >= Number(max)) ? max = current : max
   } , 0)
