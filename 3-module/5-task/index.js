@@ -1,16 +1,18 @@
+const { CONSOLE_APPENDER } = require("karma/lib/constants");
+
 function getMinMax(str) {
   let toCompare = [], res = {}
 
   str.split(' ').forEach(el => {
-    (!isNaN(el)) ? toCompare.push(el) : null
+    (!isNaN(el)) ? toCompare.push(Number(el)) : null;
   });
 
   let max = toCompare.reduce((max, current) => {
-    return (Number(current) >= Number(max)) ? max = current : max
+    return (current >= max) ? max = current : max
   } , 0)
 
   let min = toCompare.reduce((min, current) => {
-    return (Number(current) <= Number(min)) ? min = current : min
+    return (current <= min) ? min = current : min
   } , 0)
 
   res.min = min
