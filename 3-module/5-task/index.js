@@ -1,5 +1,3 @@
-const { CONSOLE_APPENDER } = require("karma/lib/constants");
-
 function getMinMax(str) {
   let toCompare = [], res = {}
 
