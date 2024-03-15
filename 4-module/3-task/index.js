@@ -4,14 +4,14 @@ function highlight(table) {
 
     if (current.cells[3].dataset.available) {
       switch (current.cells[3].dataset.available) {
-          case true:
-              current.classList.add('available')
-              break;
-          case false: 
-              current.classList.add('unavailable')
-              break;
-          }
+        case 'true':
+          current.classList.add('available')
+          break;
+        case 'false': 
+            current.classList.add('unavailable')
+            break;
         }
+      }
     else {
       current.hidden = 'true'
     }
