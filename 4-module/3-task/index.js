@@ -1,8 +1,7 @@
 function highlight(table) {
-  for (let i=0; i <= table.tBodies[0].rows.length; i++){
+  for (let i=0; i < table.tBodies[0].rows.length; i++){
     let current = table.tBodies[0].rows[i]
 
-    console.log(current.cells)
     if (current.cells[3].dataset.available) {
       switch (current.cells[3].dataset.available) {
           case true:
