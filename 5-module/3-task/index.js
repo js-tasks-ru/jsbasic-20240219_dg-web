@@ -15,24 +15,26 @@ function initCarousel() {
     }
 
     function changeSliderPos(value) {
-        res = startValue + value
-        slider.style.transform = `translate(${res}px)`
-        startValue = res
+        slider.style.transform = `translate(${value}px)`
     }
 
-    arrowNext.onclick = () => {
+    arrowNext.onclick = () => { 
+      startValue -= sliderWidth
       if(startValue > -sliderInnerWidth + sliderWidth) {
-        changeSliderPos(-sliderWidth)
+        changeSliderPos(startValue)
         arrowPref.style.display = ''
       } else {
+        changeSliderPos(startValue)
         arrowNext.style.display = 'none'
       }
     } 
     arrowPref.onclick = () => {
+      startValue += sliderWidth
       if(startValue < 0) {
-        changeSliderPos(sliderWidth)
+        changeSliderPos(startValue)
         arrowNext.style.display = ''
       } else {
+        changeSliderPos(startValue)
         arrowPref.style.display = 'none'
       }
     }
