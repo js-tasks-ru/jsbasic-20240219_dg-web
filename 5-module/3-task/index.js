@@ -15,7 +15,7 @@ function initCarousel() {
     }
 
     function changeSliderPos(value) {
-        slider.style.transform = `translate(${value}px)`
+        slider.style.transform = `translateX(${value}px)`
     }
 
     arrowNext.onclick = () => { 
